@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LearnCSharp
 {
-    class Loewe : ITier
+    class Loewe : Saeuger
     {
-        public int Alter { get; set; }
-        public string Geschlecht { get; set; }
 
         // Konstruktor
         public Loewe(int _alter, string _geschlecht)
@@ -18,14 +16,42 @@ namespace LearnCSharp
             Geschlecht = _geschlecht;
         }
 
-        public void Essen()
+        public override void Essen()
         {
             Console.WriteLine("Der Löwe isst...");
         }
 
-        public void Trinken()
+        public override void FutterBesorgen()
+        {
+            Console.WriteLine("Der Löwe fängt sich ein Känguru ...");
+        }
+
+        public override void Trinken()
         {
             Console.WriteLine("Der Löwe trinkt ...");
         }
+    }
+
+    abstract public class Saeuger : ITier
+    {
+        public int Alter { get; set; }
+        public string Geschlecht { get; set; }
+
+        public virtual void Essen()
+        {
+            Console.WriteLine("Das Saeugetier isst ...");
+        }
+
+        public virtual void Trinken()
+        {
+            Console.WriteLine("Das Saeugetier trinkt ...");
+        }
+
+        public virtual void Wachsen()
+        {
+            Console.WriteLine("Das Saeugetier waechst ...");
+        }
+
+        public abstract void FutterBesorgen();
     }
 }

@@ -16,11 +16,13 @@ namespace LearnCSharp
             tiere[1] = new HausHund(4, "Männchen");
             tiere[2] = new HausHund(8, "Weibchen");
 
-            foreach(ITier tier in tiere)
+            foreach (ITier tier in tiere)
             {
                 if (tier is Loewe)
                 {
                     Console.WriteLine("Der Löwe ist " + tier.Alter + " und ein " + tier.Geschlecht);
+                    var loewe = tier as Loewe;
+                    loewe.FutterBesorgen();
                 }
                 else if (tier is HausHund)
                 {
@@ -28,10 +30,14 @@ namespace LearnCSharp
                     var hund = tier as HausHund;
                     hund.Bellen();
                 }
-                
+
                 tier.Essen();
                 tier.Trinken();
             }
+
+            // verwendung von abstrakten Klassen
+            var elektriker = new Elektriker();
+            elektriker.ArbeitVerrichten();
 
             Console.ReadLine();
         }
