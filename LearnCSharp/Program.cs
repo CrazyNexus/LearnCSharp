@@ -39,7 +39,38 @@ namespace LearnCSharp
             var elektriker = new Elektriker();
             elektriker.ArbeitVerrichten();
 
+            // Verwendung von Strukturen
+            Buch buch1 = new Buch("C# für Beginner", "Thomas Dubiel", 42);
+            Console.WriteLine(buch1.titel);
+            Console.WriteLine(buch1.autor);
+            Console.WriteLine(buch1.seitenAnzahl);
+
+            Buch buch2;
+            buch2.titel = "Java für Anfänger";
+            buch2.autor = "Jens Jensen";
+            buch2.seitenAnzahl = 88;
+            Console.WriteLine(buch2.titel);
+            Console.WriteLine(buch2.autor);
+            Console.WriteLine(buch2.seitenAnzahl);
+
+
             Console.ReadLine();
+        }
+    }
+
+    struct Buch
+    {
+        // Variablen
+        public string titel;
+        public string autor;
+        public int seitenAnzahl;
+
+        // Konstruktor
+        public Buch(string _titel, string _autor, int _seiten)
+        {
+            titel = _titel;
+            autor = _autor;
+            seitenAnzahl = _seiten;
         }
     }
 }
