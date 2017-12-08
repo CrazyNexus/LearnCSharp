@@ -6,6 +6,25 @@ using System.Threading.Tasks;
 
 namespace LearnCSharp
 {
+    enum Wochentag
+    {
+        Montag,
+        Dienstag,
+        Mittwoch,
+        Donnerstag,
+        Freitag,
+        Samstag,
+        Sonntag
+    }
+
+    enum Himmelsrichtung
+    {
+        Nord = 10,
+        Süd,
+        West,
+        Ost
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -53,6 +72,11 @@ namespace LearnCSharp
             Console.WriteLine(buch2.autor);
             Console.WriteLine(buch2.seitenAnzahl);
 
+            Wochentag tag = Wochentag.Montag;
+            Console.WriteLine("Es ist " + tag);
+
+            Himmelsrichtung richtung = Himmelsrichtung.West;
+            Console.WriteLine("Es geht nach " + richtung + " mit Wert " + (int)richtung);
 
             Console.ReadLine();
         }
