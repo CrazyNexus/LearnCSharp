@@ -78,6 +78,11 @@ namespace LearnCSharp
             Himmelsrichtung richtung = Himmelsrichtung.West;
             Console.WriteLine("Es geht nach " + richtung + " mit Wert " + (int)richtung);
 
+            // Verwendung von Delegaten
+            Delegate myDelegate = new Delegate();
+            myDelegate.Berechnung();
+            myDelegate.Multicast();
+
             Console.ReadLine();
         }
     }
